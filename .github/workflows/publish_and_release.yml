@@ -14,12 +14,12 @@ jobs:
         run: yarn
       - name: Build
         run: yarn build
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          access: public
+      # - uses: JS-DevTools/npm-publish@v1
+      #   with:
+      #     token: ${{ secrets.NPM_TOKEN }}
+      #     access: public
       - name: Create Release Files
-        run: yarn release
+        run: yarn release:all
       - name: Get Version
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}

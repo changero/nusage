@@ -21,7 +21,7 @@
     "dev": "rollup -c -w",
     "build": "rollup -c",
     "clean": "rimraf dist release",
-    "release": "npm-run-all -p release:macos release:linux-x86 release:linux-x64 release:win32-x86 release:win32-x64",
+    "release:all": "npm-run-all -p release:macos release:linux-x86 release:linux-x64 release:win32-x86 release:win32-x64",
     "release:macos": "nexe -i dist/index.js -t macos-14.15.3 -o release/nusage-macos",
     "release:linux-x86": "nexe -i dist/index.js -t linux-x86-14.15.3 -o release/nusage-linux-x86",
     "release:linux-x64": "nexe -i dist/index.js -t linux-x64-14.15.3 -o release/nusage-linux-x64",
