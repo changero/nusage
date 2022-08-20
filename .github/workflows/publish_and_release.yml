@@ -29,22 +29,29 @@ jobs:
       #     tag: ${{ steps.get_version.outputs.VERSION }}
       - name: Create Release Files
         run: yarn release:all
-      - name: Create Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+      - uses: ncipollo/release-action@v1.10.0
         with:
-          tag_name: ${{ steps.get_version.outputs.VERSION }}
-          release_name: ${{ steps.get_version.outputs.VERSION }}
-          draft: false
-          prerelease: false
-      - uses: cb80/pubrel@latest
-        with:
+          artifacts: "release/*"
           token: ${{ secrets.MY_GITHUB_TOKEN }}
-          replace: latest
-          files: |
-            release/nusage-linux-x64
-            release/nusage-linux-x86
-            release/nusage-macos
-            release/nusage-win32-x64.exe
-            release/nusage-win32-x86.exe
+          # name: ${{ steps.get_version.outputs.VERSION }}
+          # tag: ${{ steps.get_version.outputs.VERSION }}
+          # prerelease: false
+      # - name: Create Release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ steps.get_version.outputs.VERSION }}
+      #     release_name: ${{ steps.get_version.outputs.VERSION }}
+      #     draft: false
+      #     prerelease: false
+      # - uses: cb80/pubrel@latest
+      #   with:
+      #     token: ${{ secrets.MY_GITHUB_TOKEN }}
+      #     replace: latest
+      #     files: |
+      #       release/nusage-linux-x64
+      #       release/nusage-linux-x86
+      #       release/nusage-macos
+      #       release/nusage-win32-x64.exe
+      #       release/nusage-win32-x86.exe
