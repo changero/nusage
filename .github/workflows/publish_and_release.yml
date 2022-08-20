@@ -14,10 +14,6 @@ jobs:
         run: yarn
       - name: Build
         run: yarn build
-      # - uses: JS-DevTools/npm-publish@v1
-      #   with:
-      #     token: ${{ secrets.NPM_TOKEN }}
-      #     access: public
       - name: Create Release Files
         run: yarn release
       - name: Get Version
@@ -42,14 +38,3 @@ jobs:
             release/nusage-macos
             release/nusage-win32-x64.exe
             release/nusage-win32-x86.exe
-      # 需要通过tags触发
-      # - name: Create Release
-      #   id: create_release
-      #   uses: actions/create-release@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     tag_name: ${{ github.ref }}
-      #     release_name: ${{ github.ref }}
-      #     draft: false
-      #     prerelease: false
