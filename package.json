@@ -14,7 +14,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "description": "show disk usage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
