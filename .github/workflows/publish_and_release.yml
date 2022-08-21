@@ -18,15 +18,15 @@ jobs:
         run: yarn
       - name: Build
         run: yarn build
-      # - uses: JS-DevTools/npm-publish@v1
-      #   with:
-      #     token: ${{ secrets.NPM_TOKEN }}
-      #     access: public
-      # - uses: JS-DevTools/npm-publish@v1
-      #   with:
-      #     token: ${{ secrets.NPM_TOKEN }}
-      #     access: public
-      #     tag: ${{ steps.get_version.outputs.VERSION }}
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public
+          tag: ${{ steps.get_version.outputs.VERSION }}
       - name: Create Release Files
         run: yarn release:all
       - uses: ncipollo/release-action@v1.10.0

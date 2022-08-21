@@ -13,6 +13,10 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
+  "files": [
+    "bin",
+    "dist"
+  ],
   "description": "show disk usage",
   "version": "1.0.1",
   "main": "index.js",
@@ -30,7 +34,8 @@
     "standard": "standard-version"
   },
   "dependencies": {
-    "chalk": "^4"
+    "chalk": "^4",
+    "ora": "5.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
