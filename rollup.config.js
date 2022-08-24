@@ -2,7 +2,7 @@ import babel from "@rollup/plugin-babel";
 
 export default [
   {
-    external: ["fs", "path"],
+    external: ["chalk", "ora", "fs", "path"],
     input: "./src/index.js",
     output: {
       format: "cjs",

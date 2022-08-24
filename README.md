@@ -1,6 +1,6 @@
 # nusgae
 
-一个简单的基于 Nodejs 开发的磁盘占用产看工具。支持 Windows/Mac/Linux
+一个简单的基于 Nodejs 开发的磁盘占用产看工具。支持 Windows/Mac/Linux。支持 node10+
 
 ## 安装
 

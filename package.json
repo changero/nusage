@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "chalk": "^4",
+    "commander": "^9.4.0",
     "ora": "5.4.1"
   },
   "devDependencies": {
